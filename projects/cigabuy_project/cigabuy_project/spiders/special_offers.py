@@ -1,5 +1,5 @@
 import scrapy
-from fake_useragent import UserAgent
+
 
 
 class SpecialOffersSpider(scrapy.Spider):
@@ -7,15 +7,11 @@ class SpecialOffersSpider(scrapy.Spider):
     allowed_domains = ['www.cigabuy.com']
     # start_urls = ['https://www.cigabuy.com/specials.html']
 
-    user = UserAgent().random
-    header = {'User-Agent': user}
-
-    def start_request(self):
-        url = 'https://www.cigabuy.com/specials.html'
+    def start_requests(self):
         yield scrapy.Request(
-            url=url,
+            url='https://www.cigabuy.com/specials.html',
             callback=self.parse,
-            headers = SpecialOffersSpider.header
+            headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'}
             )
 
     def parse(self, response):
@@ -44,6 +40,6 @@ class SpecialOffersSpider(scrapy.Spider):
             yield scrapy.Request(
                 url=next_page, 
                 callback=self.parse,
-                headers=SpecialOffersSpider.header,
+                headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'},
                 )
                
