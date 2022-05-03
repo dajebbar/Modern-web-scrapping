@@ -60,6 +60,6 @@ class MeterSpider(scrapy.Spider):
                 'urban_pop': urban_pop,
                 'country_share_of_world_pop' : share_world_pop,
                 'world_pop': world_pop,
-                f'{country_name}_global_rank': global_rank,
+                'global_rank': global_rank,
             }
 
