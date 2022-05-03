@@ -13,9 +13,9 @@ class SpecialOffersSpider(scrapy.Spider):
             product_title = wraper.xpath(".//div/a[@class='p_box_title']/text()").get()
             product_link = wraper.xpath(".//div/a[@class='p_box_img']/@href").get()
             product_img = wraper.xpath(".//div/a[@class='p_box_img']/img/@data-original").get()
-            product_stars = wraper.xpath(".//div[@class='p_box_star']/a/@href").get()
-            original_price = wraper.xpath(".//div[@class='p_box_price cf']/span[@class='normalprice fl']/text()").get()
-            promo_price = wraper.xpath(".//div[@class='p_box_price cf']/span[@class='productSpecialPrice fl']/text()").get()
+            product_stars = wraper.xpath(".//div/div[@class='p_box_star']/a/@href").get()
+            original_price = wraper.xpath(".//div/div[@class='p_box_price cf']/span[@class='normalprice fl']/text()").get()
+            promo_price = wraper.xpath(".//div/div[@class='p_box_price cf']/span[@class='productSpecialPrice fl']/text()").get()
 
             yield {
                 'product_title': product_title,
