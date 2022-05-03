@@ -21,4 +21,24 @@ class MeterSpider(scrapy.Spider):
             )
 
     def country_parse(self, response):
-        pass
+        country_name = response.request.meta['country_name']
+        rows = response.xpath("")
+
+
+        yield {
+            'country': country_name,
+            'year': year,
+            'population': population,
+            'yearly_%_change': yearly_pct_change,
+            'yearly_change': yearly_change,
+            'migrants(net)': migrants,
+            'median_age': median_age,
+            'fetility_rate': fertility_rate,
+            'density': density,
+            'urban_pop_%': urban_pop_pct,
+            'urban_pop': urban_pop,
+            'country_share_of_world_pop' : share_world_pop,
+            'world_pop': world_pop,
+            f'{country_name}_global_rank': global_rank,
+
+        }
