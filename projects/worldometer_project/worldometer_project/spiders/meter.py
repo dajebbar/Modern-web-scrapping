@@ -22,7 +22,7 @@ class MeterSpider(scrapy.Spider):
 
     def country_parse(self, response):
         country_name = response.request.meta['country_name']
-        rows = response.xpath("//table[@class='table table-striped table-bordered table-hover table-condensed table-list']/tbody/tr")
+        rows = response.xpath("(//table[@class='table table-striped table-bordered table-hover table-condensed table-list'])[1]/tbody/tr")
 
         for row in rows:
             year = row.xpath(".//td[1]/text()").get()
