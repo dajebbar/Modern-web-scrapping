@@ -26,7 +26,7 @@ class SpecialOffersSpider(scrapy.Spider):
                 'promo_price': promo_price
             }
         
-        next_page = response.xpath("//a[@class='pageNum']").get()
+        next_page = response.xpath("//a[@class='pageNum']/@href").get()
         if next_page:
             yield scrapy.Request(url=next_page, callback=self.parse)
                
