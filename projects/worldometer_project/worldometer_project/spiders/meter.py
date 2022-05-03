@@ -22,7 +22,22 @@ class MeterSpider(scrapy.Spider):
 
     def country_parse(self, response):
         country_name = response.request.meta['country_name']
-        rows = response.xpath("")
+        rows = response.xpath("//table[@class='table table-striped table-bordered table-hover table-condensed table-list']/tbody/tr")
+
+        for row in rows:
+            year = row.xpath(".//td[1]/text()").get()
+            population = row.xpath(".//td[2]/strong/text()").get()
+            yearly_pct_change = row.xpath(".//td[3]/text()").get()
+            yearly_change = row.xpath(".//td[4]/text()").get()
+            migrants = row.xpath(".//td[5]/text()").get()
+            median_age = row.xpath(".//td[6]/text()").get()
+            fertility_rate = row.xpath(".//td[7]/text()").get()
+            density = row.xpath(".//td[8]/text()").get()
+            urban_pop_pct = row.xpath(".//td[9]/text()").get()
+            urban_pop = row.xpath(".//td[10]/text()").get()
+            share_world_pop = row.xpath(".//td[11]/text()").get()
+            world_pop = row.xpath(".//td[12]/text()").get()
+            global_rank = row.xpath(".//td[13]/text()").get()
 
 
         yield {
