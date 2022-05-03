@@ -1,10 +1,22 @@
 import scrapy
+from fake_useragent import UserAgent
 
 
 class SpecialOffersSpider(scrapy.Spider):
     name = 'special_offers'
     allowed_domains = ['www.cigabuy.com']
-    start_urls = ['https://www.cigabuy.com/specials.html']
+    # start_urls = ['https://www.cigabuy.com/specials.html']
+
+    user = UserAgent().random
+    header = {'User-Agent': user}
+
+    def start_request(self):
+        url = 'https://www.cigabuy.com/specials.html'
+        yield scrapy.Request(
+            url=url,
+            callback=self.parse,
+            headers = SpecialOffersSpider.header
+            )
 
     def parse(self, response):
         wrapers = response.xpath("//ul[@class='productlisting-ul']/div[@class='p_box_wrapper']/div")
@@ -23,10 +35,15 @@ class SpecialOffersSpider(scrapy.Spider):
                 'product_img': product_img,
                 'product_stars': product_stars,
                 'original_price': original_price,
-                'promo_price': promo_price
+                'promo_price': promo_price,
+                'User-Agent': response.request.headers['User-Agent']
             }
         
         next_page = response.xpath("//a[@class='pageNum']/@href").get()
         if next_page:
-            yield scrapy.Request(url=next_page, callback=self.parse)
+            yield scrapy.Request(
+                url=next_page, 
+                callback=self.parse,
+                headers=SpecialOffersSpider.header,
+                )
                
