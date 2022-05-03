@@ -7,12 +7,17 @@ class SpecialOffersSpider(scrapy.Spider):
     allowed_domains = ['www.cigabuy.com']
     # start_urls = ['https://www.cigabuy.com/specials.html']
 
+    # def start_requests(self):
+    #     yield scrapy.Request(
+    #         url='https://www.cigabuy.com/specials.html',
+    #         callback=self.parse,
+    #         headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'}
+    #         )
+
     def start_requests(self):
-        yield scrapy.Request(
-            url='https://www.cigabuy.com/specials.html',
-            callback=self.parse,
-            headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'}
-            )
+        yield scrapy.Request(url='https://web.archive.org/web/20190324163700/http://www.tinydeal.com/specials.html', callback=self.parse, headers={
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
+        })
 
     def parse(self, response):
         wrapers = response.xpath("//ul[@class='productlisting-ul']/div[@class='p_box_wrapper']/div")
@@ -36,10 +41,15 @@ class SpecialOffersSpider(scrapy.Spider):
             }
         
         next_page = response.xpath("//a[@class='pageNum']/@href").get()
+        # if next_page:
+        #     yield scrapy.Request(
+        #         url=next_page, 
+        #         callback=self.parse,
+        #         headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'},
+        #         )
+
         if next_page:
-            yield scrapy.Request(
-                url=next_page, 
-                callback=self.parse,
-                headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'},
-                )
+            yield scrapy.Request(url=next_page, callback=self.parse, headers={
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
+            })
                
