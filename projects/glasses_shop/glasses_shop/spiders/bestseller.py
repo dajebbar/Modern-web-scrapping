@@ -25,8 +25,8 @@ class BestsellerSpider(scrapy.Spider):
                 'price': glass.xpath("div[@class='p-title-block']/div[@class='mt-3']/div[@class='row no-gutters']/div[@class='col-6 col-lg-6']/div[@class='p-price']/div/span/text()").get(),
                 'User-Agent': response.request.headers['User-Agent']
             }
-        
-        next_page = response.xpath("//ul[@class='pagination']/li/a[@class='page-link']/href").get()
+        "//ul[@class='pagination']/li[position() = last()]/a/@href"
+        next_page = response.xpath("//ul[@class='pagination']/li/a[@class='page-link']/@href").get()
         if next_page:
             scrapy.Request(
                 url=next_page,
