@@ -21,7 +21,7 @@ class BestsellerSpider(scrapy.Spider):
              yield {
                 'url': glass.xpath(".//div[@class='product-img-outer']/a/@href").get(),
                 'img_url': glass.xpath(".//div[@class='product-img-outer']/a/img/@data-src").get(),
-                'product_name': glass.xpath(".//div[@class='p-title-block']/div[@class='mt-3']/div[@class='row no-gutters']/div[@class='col-6 col-lg-6']/div[@class='p-title']/a/text()").get(),
+                'product_name': glass.xpath("normalize-space(.//div[@class='p-title-block']/div[@class='mt-3']/div[@class='row no-gutters']/div[@class='col-6 col-lg-6']/div[@class='p-title']/a/text())").get(),
                 'price': glass.xpath("div[@class='p-title-block']/div[@class='mt-3']/div[@class='row no-gutters']/div[@class='col-6 col-lg-6']/div[@class='p-price']/div/span/text()").get(),
                 'User-Agent': response.request.headers['User-Agent']
             }
