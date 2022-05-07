@@ -33,14 +33,14 @@ class QuotesSpider(scrapy.Spider):
         )
 
     def parse(self, response):
-        for quote in response.xpath(""):
+        for quote in response.xpath("//div[@class='quote']"):
             yield {
-                'text': quote.xpath("").get(),
-                'author': quote.xpath("").get(),
-                'tags': quote.xpath("").get(),
+                'text': quote.xpath(".//span[1]/text()").get(),
+                'author': quote.xpath(".//span[2]/small/text()").get(),
+                'tags': quote.xpath(".//div/a/text()").get(),
             }
         
-        next_page = response.xpath("").get()
+        next_page = response.xpath("//li[@class='next']/a").get()
         if next_page:
             yield scrapy.Request(
                 url=next_page,
