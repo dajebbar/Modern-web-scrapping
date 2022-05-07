@@ -92,3 +92,5 @@ DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 SPLASH_URL = 'http://127.0.0.1:8050/'
+
+FEED_EXPORT_ENCODING = 'utf-8'
