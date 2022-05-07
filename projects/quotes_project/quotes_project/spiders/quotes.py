@@ -9,6 +9,17 @@ class QuotesSpider(scrapy.Spider):
     # start_urls = ['http://quotes.toscrape.com/']
 
     script = '''
+                    function main(splash, args)
+                        assert(splash:go(args.url))
+                        assert(splash:wait(0.5))
+                        
+                        quotes = assert(splash:select_all(".quotes"))
+                        assert(splash:wait(0.5))
+                        return {
+                            html = splash:html(),
+                            png = splash:png(),
+                        }
+                    end
             '''
     
     def start_requests(self):
