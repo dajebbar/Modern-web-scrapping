@@ -8,6 +8,7 @@
 from itemadapter import ItemAdapter
 import logging
 import pymongo
+import sqlite3
 
 
 class MongodbPipeline:
@@ -29,4 +30,48 @@ class MongodbPipeline:
 
     def process_item(self, item, spider):
         self.db[self.collection_name].insert_one(item)
+        return item
+
+
+class SqLitedbPipeline:
+
+    def open_spider(self, spider):
+        self.connection = sqlite3.connect('imdb.db')
+        self.c = self.connection.cursor()
+        self.c.execute(
+            '''
+                create table best_movies(
+                    title text,
+                    year text,
+                    genre text,
+                    permission text,
+                    duration_hr text,
+                    duration_min text,
+                    noted_imdb text,
+                    movie_poster text,
+                    play_trailer text,
+                    movie_url text,
+                )
+            '''
+        )
+
+        self.connection.commit()
+        
+
+    def close_spider(self, spider):
+        self.client.close()
+
+
+    def process_item(self, item, spider):
+        self.c.execute(
+            '''
+                insert into best_movies(title, year, genre, 
+                permission, duration_hr, duration_min, 
+                noted_imdb, movie_poster, play_trailer, movie_url) values(?,?,?,?,?,?,?,?,?,?)
+            ''', (
+                item.get('title'), item.get('year'), item.get('genre'),item.get('permission'),
+                item.get('duration_hr'),item.get('duration_min'),item.get('noted_imdb'),
+                item.get('movie_poster'),item.get('play_trailer'),item.get('movie_url')
+            ))
+        self.connection.commit()
         return item
