@@ -50,7 +50,7 @@ class SqLitedbPipeline:
                     noted_imdb text,
                     movie_poster text,
                     play_trailer text,
-                    movie_url text,
+                    movie_url text
                 )
             '''
         )
