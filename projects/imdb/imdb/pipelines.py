@@ -59,7 +59,7 @@ class SqLitedbPipeline:
         
 
     def close_spider(self, spider):
-        self.client.close()
+        self.connection.close()
 
 
     def process_item(self, item, spider):
