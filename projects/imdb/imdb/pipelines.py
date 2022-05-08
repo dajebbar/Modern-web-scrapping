@@ -6,8 +6,16 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
+import logging
 
 
 class ImdbPipeline:
+    def open_spider(self, spider):
+        logging.warning('Spider opened from Pipeline')
+
+    def close_spider(self, spider):
+        logging.warning('Spider closed from Pipeline')
+
+
     def process_item(self, item, spider):
         return item
