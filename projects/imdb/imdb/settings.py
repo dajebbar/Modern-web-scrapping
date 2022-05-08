@@ -66,7 +66,7 @@ ITEM_PIPELINES = {
    'imdb.pipelines.MongodbPipeline': 300,
 }
 
-MONGO_URI = 'HELLO WORLD!'
+# MONGO_URI = 'HELLO WORLD!'
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
