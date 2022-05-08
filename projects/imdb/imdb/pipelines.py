@@ -38,22 +38,25 @@ class SqLitedbPipeline:
     def open_spider(self, spider):
         self.connection = sqlite3.connect('imdb.db')
         self.c = self.connection.cursor()
-        self.c.execute(
-            '''
-                create table best_movies(
-                    title text,
-                    year text,
-                    genre text,
-                    permission text,
-                    duration_hr text,
-                    duration_min text,
-                    noted_imdb text,
-                    movie_poster text,
-                    play_trailer text,
-                    movie_url text
-                )
-            '''
-        )
+        try:
+            self.c.execute(
+                '''
+                    create table best_movies(
+                        title text,
+                        year text,
+                        genre text,
+                        permission text,
+                        duration_hr text,
+                        duration_min text,
+                        noted_imdb text,
+                        movie_poster text,
+                        play_trailer text,
+                        movie_url text
+                    )
+                '''
+            )
+        except sqlite3.OperationalError:
+            pass
 
         self.connection.commit()
         
