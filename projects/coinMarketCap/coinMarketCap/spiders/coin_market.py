@@ -16,4 +16,5 @@ class CoinMarketSpider(CrawlSpider):
         yield {
             'name': response.xpath("//h2[@class='sc-1q9q90x-0 jCInrl h1']/text()").get(),
             'price': response.xpath("//div[@class='priceValue ']/span/text()").get(),
+            'rank': response.xpath("//div[@class='namePill namePillPrimary']/text()").get(),
         }
