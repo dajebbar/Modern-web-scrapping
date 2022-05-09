@@ -1,4 +1,5 @@
 import scrapy
+import json
 
 
 class QuotesApiSpider(scrapy.Spider):
@@ -7,4 +8,7 @@ class QuotesApiSpider(scrapy.Spider):
     start_urls = ['https://quotes.toscrape.com/api/quotes']
 
     def parse(self, response):
-        pass
+        resp = json.loads(response.body)
+        quotes = resp.get('quotes')
+        print(quotes)
+        # print(response.body)
