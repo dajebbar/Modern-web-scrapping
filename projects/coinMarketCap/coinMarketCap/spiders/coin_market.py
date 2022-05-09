@@ -1,7 +1,7 @@
 import scrapy
 from scrapy.linkextractors import LinkExtractor
 from scrapy.spiders import CrawlSpider, Rule
-
+from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
 
 class CoinMarketSpider(CrawlSpider):
     name = 'coin_market'
