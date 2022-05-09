@@ -6,11 +6,29 @@ from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
 class CoinMarketSpider(CrawlSpider):
     name = 'coin_market'
     allowed_domains = ['coinmarketcap.com']
-    start_urls = ['https://coinmarketcap.com/']
-
+    # start_urls = ['https://coinmarketcap.com/']
+    user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36'
+    
+    def start_requests(self):
+        yield scrapy.Request(
+            url='https://coinmarketcap.com/',
+            callback=self.parse,
+            headers={
+                'User-Agent': self.user_agent,
+            })
+    
     rules = (
-        Rule(LinkExtractor(restrict_xpaths="//div[@class='sc-16r8icm-0 escjiH']/a[@class='cmc-link']"), callback='parse_item', follow=True),
+        Rule(LinkExtractor(
+            restrict_xpaths="//div[@class='sc-16r8icm-0 escjiH']/a[@class='cmc-link']"), 
+            callback='parse_item', 
+            follow=True,
+            process_request='set_user_agent',
+        ),
     )
+
+    def set_user_agent(self, request, response):
+        request.headers['User-Agent'] = self.user_agent
+        return request
 
     def parse_item(self, response):
         yield {
