@@ -41,7 +41,7 @@ class IncreaseViewSpider(scrapy.Spider):
             test_url = 'https://scrapingkungfu.herokuapp.com/api/request'
             
             # use your video url here
-            video_url = 'https://www.youtube.com/watch?v=jjOxp-nlhoY'
+            video_url = 'https://www.youtube.com/watch?v=nzOL9ToR8PM'
             
             yield scrapy.Request(
                 video_url, 
