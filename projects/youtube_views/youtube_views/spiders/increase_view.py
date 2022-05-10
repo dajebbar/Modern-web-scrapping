@@ -25,6 +25,13 @@ class IncreaseViewSpider(scrapy.Spider):
         table = response.xpath("//table[@class='table table-striped table-bordered']")
         rows = table.xpath(".//tbody/tr")
         cols = [rows.xpath(".//td/text()").getall() for row in rows]
+
+        proxies = []
+        for col in cols:
+            if col and col[4] == 'elite proxy' and col[6] == 'yes':
+                 proxies.append(f'https://{col[0]}:{col[1]}')
+        
+        print(f'***PROXIES***: {len(proxies)}')
         # print(cols)
         # print(response.text)
 
