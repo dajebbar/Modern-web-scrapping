@@ -24,16 +24,32 @@ class IncreaseViewSpider(scrapy.Spider):
     def parse(self, response):
         table = response.xpath("//table[@class='table table-striped table-bordered']")
         rows = table.xpath(".//tbody/tr")
-        cols = [rows.xpath(".//td/text()").getall() for row in rows]
+        cols = [row.xpath(".//td/text()").getall() for row in rows]
+        # print(cols)
 
         proxies = []
         for col in cols:
             if col and col[4] == 'elite proxy' and col[6] == 'yes':
+                # print(col)
                  proxies.append(f'https://{col[0]}:{col[1]}')
         
         print(f'***PROXIES***: {len(proxies)}')
         # print(cols)
         # print(response.text)
+
+        for proxy in proxies:
+            test_url = 'https://scrapingkungfu.herokuapp.com/api/request'
+            
+            # use your video url here
+            video_url = 'https://www.youtube.com/watch?v=jjOxp-nlhoY'
+            
+            yield scrapy.Request(
+                video_url, 
+                dont_filter=True, 
+                headers=self.headers, 
+                meta={'proxy': proxy}, 
+                callback=self.check_response,
+                )
 
 
 # run spider process
