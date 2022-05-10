@@ -1,6 +1,6 @@
-from concurrent.futures import process
 import scrapy
 from scrapy.crawler import CrawlerProcess
+import json
 
 class IncreaseViewSpider(scrapy.Spider):
     name = 'increase_view'
@@ -50,6 +50,10 @@ class IncreaseViewSpider(scrapy.Spider):
                 meta={'proxy': proxy}, 
                 callback=self.check_response,
                 )
+    
+    def check_response(self, response):
+        print('\n\nRESPONSE:', response.status)
+        # print(json.dumps(json.loads(response.text), indent=2))
 
 
 # run spider process
