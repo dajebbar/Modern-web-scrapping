@@ -22,10 +22,14 @@ class IncreaseViewSpider(scrapy.Spider):
     }
 
     def parse(self, response):
-        pass
+        table = response.xpath("//table[@class='table table-striped table-bordered']")
+        rows = table.xpath(".//tbody/tr")
+        cols = [rows.xpath(".//td/text()").getall() for row in rows]
+        # print(cols)
+        # print(response.text)
 
 
 # run spider process
-process = CrawlerProcess()
-process.crawl(IncreaseViewSpider)
-process.start()
+# process = CrawlerProcess()
+# process.crawl(IncreaseViewSpider)
+# process.start()
