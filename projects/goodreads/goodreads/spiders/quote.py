@@ -17,4 +17,11 @@ class QuoteSpider(scrapy.Spider):
                 'likes': quote.xpath("//a[@class='smallText']/text()").get(),
             }
 
-        
+        next_page = response.xpath("//a[@rel='next']/text()").get()
+        if next_page:
+            url = f'https://www.goodreads.com/quotes?page={next_page}'
+            yield scrapy.Request(
+                url=url,
+                callback=self.parse,
+
+            )
