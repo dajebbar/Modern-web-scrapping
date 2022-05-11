@@ -7,6 +7,9 @@ import scrapy
 
 
 class GoodreadsItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    # Create Fields
+    author_img = scrapy.Field()
+    text = scrapy.Field()
+    author_name = scrapy.Field()
+    tags = scrapy.Field()
+    likes = scrapy.Field()
