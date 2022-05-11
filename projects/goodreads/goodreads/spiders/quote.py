@@ -1,4 +1,8 @@
 import scrapy
+# import item loader
+from scrapy.loader import ItemLoader
+# import GoodreadsItem class
+from goodreads.items import GoodreadsItem
 
 
 class QuoteSpider(scrapy.Spider):
