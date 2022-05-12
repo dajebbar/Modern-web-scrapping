@@ -30,7 +30,7 @@ class EliteSpider(scrapy.Spider):
         # print(cols)
 
         for col in cols:
-            if col and col[4]=='HTTPS' and col[5]=='High anonymity':
+            if col and col[4]=='HTTPS' and col[5]=='High':
                 yield {
                     'ip_adress': col[0],
                     'port': col[1],
@@ -52,12 +52,12 @@ class EliteSpider(scrapy.Spider):
             #     }
         
         
-
-        self.pages += self.INCREMENTED
-        url = f'https://hidemy.name/en/proxy-list/?start={self.pages}#list'
-        yield scrapy.Request(
-            url=url,
-            callback=self.parse,
-            headers=self.headers
-        )
+        while self.pages <=10176:
+            self.pages += self.INCREMENTED
+            url = f'https://hidemy.name/en/proxy-list/?start={self.pages}#list'
+            yield scrapy.Request(
+                url=url,
+                callback=self.parse,
+                headers=self.headers
+            )
 
