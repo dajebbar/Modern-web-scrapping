@@ -40,6 +40,17 @@ class EliteSpider(scrapy.Spider):
                     'anonimity': col[5],
 
                 }
+
+            # yield {
+            #         'ip_adress': col[0],
+            #         'port': col[1],
+            #         'country_city': col[2],
+            #         'speed': col[3],
+            #         'type': col[4],
+            #         'anonimity': col[5],
+
+            #     }
+        
         
 
         self.pages += self.INCREMENTED
