@@ -50,7 +50,7 @@ class EliteSpider(scrapy.Spider):
             #     }
         
         
-        next_page = response.xpath("//li[@class='next_array']/a/@href")
+        next_page = response.xpath("//li[@class='next_array']/a/@href").get()
         if next_page:
             yield scrapy.Request(
                 url=response.urljoin(next),
