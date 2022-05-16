@@ -19,9 +19,7 @@ class EliteSpider(scrapy.Spider):
         'upgrade-insecure-requests': '1',
         'user-agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:99.0) Gecko/20100101 Firefox/99.0'
     }
-    INCREMENTED = 64
-    pages = 0
-
+    
     def parse(self, response):
         table = response.xpath("//div[@class='table_block']/table")
         rows = table.xpath(".//tbody/tr")
@@ -30,7 +28,7 @@ class EliteSpider(scrapy.Spider):
         # print(cols)
 
         for col in cols:
-            if col and col[4]=='HTTPS' and col[5]=='High':
+            if col and col[4]=='HTTPS':
                 yield {
                     'ip_adress': col[0],
                     'port': col[1],
@@ -52,12 +50,11 @@ class EliteSpider(scrapy.Spider):
             #     }
         
         
-        while self.pages <=10176:
-            self.pages += self.INCREMENTED
-            url = f'https://hidemy.name/en/proxy-list/?start={self.pages}#list'
+        next_page = response.xpath("//li[@class='next_array']/a/@href")
+        if next_page:
             yield scrapy.Request(
-                url=url,
+                url=response.urljoin(next),
                 callback=self.parse,
-                headers=self.headers
+                headers=self.headers,
             )
 
