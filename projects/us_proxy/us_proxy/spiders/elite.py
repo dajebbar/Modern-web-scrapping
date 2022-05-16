@@ -1,4 +1,5 @@
 import scrapy
+from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
 
 
 class EliteSpider(scrapy.Spider):
