@@ -1,12 +1,12 @@
 import scrapy
 from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
-from scrapy.exceptions import CloseSpider
+# from scrapy.exceptions import CloseSpider
 
 
 class EliteSpider(scrapy.Spider):
     name = 'elite'
     allowed_domains = ['hidemy.name']
-    start_urls = ['https://hidemy.name/en/proxy-list']
+    start_urls = ['https://hidemy.name/en/proxy-list/?start=64']
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -28,12 +28,22 @@ class EliteSpider(scrapy.Spider):
         cols = [row.xpath(".//td/text()").getall() for row in rows]
 
         # print(cols)
-        if response.status == 301:
-            raise CloseSpider('Reached last page...')
+        # if response.status == 301:
+        #     raise CloseSpider('Reached last page...')
 
         for col in cols:
-            if col and col[4]=='HTTPS':
-                yield {
+        #     if col and col[4]=='HTTPS':
+        #         yield {
+        #             'ip_adress': col[0],
+        #             'port': col[1],
+        #             'country_city': col[2],
+        #             'speed': col[3],
+        #             'type': col[4],
+        #             'anonimity': col[5],
+
+        #         }
+
+            yield {
                     'ip_adress': col[0],
                     'port': col[1],
                     'country_city': col[2],
@@ -42,16 +52,6 @@ class EliteSpider(scrapy.Spider):
                     'anonimity': col[5],
 
                 }
-
-            # yield {
-            #         'ip_adress': col[0],
-            #         'port': col[1],
-            #         'country_city': col[2],
-            #         'speed': col[3],
-            #         'type': col[4],
-            #         'anonimity': col[5],
-
-            #     }
         
         
         next_page = response.xpath("//li[@class='next_array']/a/@href").get()
