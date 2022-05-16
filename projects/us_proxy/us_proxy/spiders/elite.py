@@ -1,5 +1,6 @@
 import scrapy
 from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
+from scrapy.exceptions import CloseSpider
 
 
 class EliteSpider(scrapy.Spider):
@@ -27,6 +28,8 @@ class EliteSpider(scrapy.Spider):
         cols = [row.xpath(".//td/text()").getall() for row in rows]
 
         # print(cols)
+        if response.status == 301:
+            raise CloseSpider('Reached last page...')
 
         for col in cols:
             if col and col[4]=='HTTPS':
