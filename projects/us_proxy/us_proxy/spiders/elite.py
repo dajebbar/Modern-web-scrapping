@@ -5,7 +5,7 @@ from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
 class EliteSpider(scrapy.Spider):
     name = 'elite'
     allowed_domains = ['hidemy.name']
-    start_urls = ['https://hidemy.name/en/proxy-list/?start=64#list']
+    start_urls = ['https://hidemy.name/en/proxy-list']
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -54,7 +54,7 @@ class EliteSpider(scrapy.Spider):
         next_page = response.xpath("//li[@class='next_array']/a/@href").get()
         if next_page:
             yield scrapy.Request(
-                url=response.urljoin(next_page),
+                url=f'https://hidemy.name{next_page}',
                 callback=self.parse,
                 headers=self.headers,
             )
