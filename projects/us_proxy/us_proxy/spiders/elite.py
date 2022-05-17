@@ -6,7 +6,7 @@ from scrapy_cloudflare_middleware.middlewares import CloudFlareMiddleware
 class EliteSpider(scrapy.Spider):
     name = 'elite'
     allowed_domains = ['hidemy.name']
-    start_urls = ['https://hidemy.name/en/proxy-list/?start=64']
+    start_urls = ['https://hidemy.name/en/proxy-list']
 
     headers = {
         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -23,42 +23,32 @@ class EliteSpider(scrapy.Spider):
     }
     
     def parse(self, response):
-        table = response.xpath("//div[@class='table_block']/table")
-        rows = table.xpath(".//tbody/tr")
-        cols = [row.xpath(".//td/text()").getall() for row in rows]
+        # table = response.xpath("//div[@class='table_block']/table")
+        # rows = table.xpath(".//tbody/tr")
+        # cols = [row.xpath(".//td/text()").getall() for row in rows]
+        cols = response.xpath("//div['table_block']/table/tbody/tr")
 
         # print(cols)
         # if response.status == 301:
         #     raise CloseSpider('Reached last page...')
 
         for col in cols:
-        #     if col and col[4]=='HTTPS':
-        #         yield {
-        #             'ip_adress': col[0],
-        #             'port': col[1],
-        #             'country_city': col[2],
-        #             'speed': col[3],
-        #             'type': col[4],
-        #             'anonimity': col[5],
-
-        #         }
-
             yield {
-                    'ip_adress': col[0],
-                    'port': col[1],
-                    'country_city': col[2],
-                    'speed': col[3],
-                    'type': col[4],
-                    'anonimity': col[5],
+                    'ip_adress': col.xpath(".//td[1]/text()").get(),
+                    'port': col.xpath(".//td[2]/text()").get(),
+                    'country_city': col.xpath(".//td[3]/span/text()").get(),
+                    'speed': col.xpath(".//td[4]/div/p/text()").get(),
+                    'type': col.xpath(".//td[5]/text()").get(),
+                    'anonimity': col.xpath("td[6]/text()").get(),
 
                 }
         
         
-        next_page = response.xpath("//li[@class='next_array']/a/@href").get()
-        if next_page:
-            yield scrapy.Request(
-                url=f'https://hidemy.name{next_page}',
-                callback=self.parse,
-                headers=self.headers,
-            )
+        # next_page = response.xpath("//li[@class='next_array']/a/@href").get()
+        # if next_page:
+        #     yield scrapy.Request(
+        #         url=f'https://hidemy.name{next_page}',
+        #         callback=self.parse,
+        #         headers=self.headers,
+        #     )
 
