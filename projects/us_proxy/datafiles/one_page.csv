@@ -1,0 +1,65 @@
+ip_adress,port,country_city,speed,type,anonimity
+185.66.228.149,4145,Iran,5100 ms,SOCKS4,High
+188.136.162.30,4153,Iran,3700 ms,SOCKS4,High
+77.104.75.97,5678,Iran,1620 ms,SOCKS4,High
+82.99.204.198,1080,Iran,740 ms,SOCKS5,High
+37.255.183.2,3629,Iran,3680 ms,SOCKS4,High
+46.209.47.2,1081,Iran,1720 ms,SOCKS4,High
+217.219.76.40,4153,Iran,640 ms,SOCKS4,High
+82.99.203.76,58523,Iran,1680 ms,SOCKS4,High
+185.171.54.29,4153,Iran,660 ms,SOCKS4,High
+37.152.176.95,80,Iran,680 ms,SOCKS4,High
+173.245.49.13,80,France,360 ms,HTTP,no
+203.28.8.128,80,Cyprus,260 ms,HTTP,no
+45.8.104.129,80,Curacao,160 ms,HTTP,no
+185.171.231.135,80,United Kingdom,160 ms,HTTP,no
+23.227.38.34,80,Canada,860 ms,HTTP,no
+45.8.107.210,80,Curacao,760 ms,HTTP,no
+203.23.103.180,80,Belize,860 ms,HTTP,no
+91.226.97.219,80,Belize,160 ms,HTTP,no
+91.243.35.132,80,United Kingdom,160 ms,HTTP,no
+203.30.190.133,80,Belize,160 ms,HTTP,no
+203.24.108.200,80,Cyprus,460 ms,HTTP,no
+203.28.9.130,80,Cyprus,560 ms,HTTP,no
+203.32.120.243,80,"Virgin Islands, British",60 ms,HTTP,no
+203.24.109.215,80,Belize,880 ms,HTTP,no
+203.24.109.111,80,Belize,160 ms,HTTP,no
+203.24.103.58,80,"Virgin Islands, British",560 ms,HTTP,no
+185.162.228.167,80,Armenia,660 ms,HTTP,no
+45.8.106.245,80,Curacao,460 ms,HTTP,no
+45.12.30.172,80,Romania,360 ms,HTTP,no
+203.30.190.195,80,Belize,360 ms,HTTP,no
+203.24.103.212,80,"Virgin Islands, British",60 ms,HTTP,no
+91.243.35.113,80,United Kingdom,660 ms,HTTP,no
+45.8.107.46,80,Curacao,460 ms,HTTP,no
+45.8.105.190,80,Curacao,660 ms,HTTP,no
+203.13.32.176,80,Cyprus,260 ms,HTTP,no
+45.8.104.142,80,Curacao,360 ms,HTTP,no
+203.23.104.208,80,Cyprus,580 ms,HTTP,no
+45.8.106.174,80,Curacao,160 ms,HTTP,no
+185.162.231.226,80,Armenia,360 ms,HTTP,no
+45.8.106.128,80,Curacao,260 ms,HTTP,no
+194.87.58.134,80,Czech Republic,360 ms,HTTP,no
+203.24.108.244,80,Cyprus,20 ms,HTTP,no
+203.30.190.6,80,Belize,20 ms,HTTP,no
+203.28.8.60,80,Cyprus,600 ms,HTTP,no
+203.22.223.201,80,Cyprus,580 ms,HTTP,no
+45.14.174.96,80,Germany,580 ms,HTTP,no
+185.171.231.233,80,United Kingdom,160 ms,HTTP,no
+23.227.38.230,80,Canada,20 ms,HTTP,no
+45.8.107.44,80,Curacao,20 ms,HTTP,no
+203.23.103.13,80,Belize,580 ms,HTTP,no
+185.171.231.50,80,United Kingdom,20 ms,HTTP,no
+45.8.106.98,80,Curacao,20 ms,HTTP,no
+203.34.28.163,80,"Virgin Islands, British",580 ms,HTTP,no
+45.8.104.32,80,Curacao,20 ms,HTTP,no
+45.12.31.165,80,Romania,980 ms,HTTP,no
+203.30.191.3,80,Belize,20 ms,HTTP,no
+45.8.107.82,80,Curacao,580 ms,HTTP,no
+45.14.174.221,80,Germany,20 ms,HTTP,no
+185.238.228.122,80,Spain,20 ms,HTTP,no
+141.101.123.25,80,,360 ms,HTTP,no
+203.32.120.47,80,"Virgin Islands, British",360 ms,HTTP,no
+203.32.121.241,80,"Virgin Islands, British",160 ms,HTTP,no
+45.12.31.27,80,Romania,380 ms,HTTP,no
+203.30.191.88,80,Belize,180 ms,HTTP,no
