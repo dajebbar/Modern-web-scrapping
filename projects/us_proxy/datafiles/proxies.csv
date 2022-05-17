@@ -1,130 +1,65 @@
 ip_adress,port,country_city,speed,type,anonimity
-172.67.214.105,80, , ,HTTP,no
-172.67.70.62,80, , ,HTTP,no
-91.226.97.108,80, , ,HTTP,no
-172.67.177.217,80, , ,HTTP,no
-23.227.38.247,80, , ,HTTP,no
-185.162.231.51,80, , ,HTTP,no
-203.24.109.23,80, , ,HTTP,no
-203.34.28.90,80, , ,HTTP,no
-23.227.38.131,80, , ,HTTP,no
-203.24.103.189,80, , ,HTTP,no
-185.162.231.122,80, , ,HTTP,no
-185.162.231.120,80, , ,HTTP,no
-203.24.108.193,80, , ,HTTP,no
-203.30.190.185,80, , ,HTTP,no
-185.171.231.187,80, , ,HTTP,no
-185.171.230.149,80, , ,HTTP,no
-91.226.97.227,80, , ,HTTP,no
-185.162.231.35,80, , ,HTTP,no
-203.22.223.182,80, , ,HTTP,no
-203.30.189.33,80, , ,HTTP,no
-203.28.8.211,80, , ,HTTP,no
-199.60.103.191,80, , ,HTTP,no
-185.171.230.223,80, , ,HTTP,no
-203.30.188.69,80, , ,HTTP,no
-203.32.120.70,80, , ,HTTP,no
-203.23.103.198,80, , ,HTTP,no
-185.171.230.135,80, , ,HTTP,no
-91.243.35.241,80, , ,HTTP,no
-203.24.108.185,80, , ,HTTP,no
-45.12.31.92,80, , ,HTTP,no
-203.24.102.3,80, , ,HTTP,no
-203.23.106.5,80, , ,HTTP,no
-172.67.160.226,80, , ,HTTP,no
-172.67.171.204,80, , ,HTTP,no
-172.67.181.20,80, , ,HTTP,no
-203.30.188.231,80, , ,HTTP,no
-172.67.177.201,80, , ,HTTP,no
-203.30.191.119,80, , ,HTTP,no
-45.8.104.183,80, , ,HTTP,no
-185.162.229.181,80, , ,HTTP,no
-203.32.120.162,80, , ,HTTP,no
-45.8.104.232,80, , ,HTTP,no
-185.162.231.240,80, , ,HTTP,no
-31.43.179.153,80, , ,HTTP,no
-141.193.213.44,80, , ,HTTP,no
-172.67.181.30,80, , ,HTTP,no
-172.67.181.34,80, , ,HTTP,no
-172.67.187.199,80, , ,HTTP,no
-172.67.181.215,80, , ,HTTP,no
-172.64.142.76,80, , ,HTTP,no
-172.67.97.169,80, , ,HTTP,no
-172.67.3.92,80, , ,HTTP,no
-172.67.3.73,80, , ,HTTP,no
-91.243.35.42,80, , ,HTTP,no
-172.67.176.151,80, , ,HTTP,no
-45.12.31.154,80, , ,HTTP,no
-45.14.174.219,80, , ,HTTP,no
-203.22.223.94,80, , ,HTTP,no
-45.8.104.86,80, , ,HTTP,no
-45.8.105.51,80, , ,HTTP,no
-45.8.105.213,80, , ,HTTP,no
-185.162.231.153,80, , ,HTTP,no
-185.162.230.162,80, , ,HTTP,no
-203.23.103.224,80, , ,HTTP,no
-ip_adress,port,country_city,speed,type,anonimity
-172.67.214.105,80, , ,HTTP,no
-172.67.70.62,80, , ,HTTP,no
-91.226.97.108,80, , ,HTTP,no
-172.67.177.217,80, , ,HTTP,no
-23.227.38.247,80, , ,HTTP,no
-185.162.231.51,80, , ,HTTP,no
-203.24.109.23,80, , ,HTTP,no
-203.34.28.90,80, , ,HTTP,no
-23.227.38.131,80, , ,HTTP,no
-203.24.103.189,80, , ,HTTP,no
-185.162.231.122,80, , ,HTTP,no
-185.162.231.120,80, , ,HTTP,no
-203.24.108.193,80, , ,HTTP,no
-203.30.190.185,80, , ,HTTP,no
-185.171.231.187,80, , ,HTTP,no
-185.171.230.149,80, , ,HTTP,no
-91.226.97.227,80, , ,HTTP,no
-185.162.231.35,80, , ,HTTP,no
-203.22.223.182,80, , ,HTTP,no
-203.30.189.33,80, , ,HTTP,no
-203.28.8.211,80, , ,HTTP,no
-199.60.103.191,80, , ,HTTP,no
-185.171.230.223,80, , ,HTTP,no
-203.30.188.69,80, , ,HTTP,no
-203.32.120.70,80, , ,HTTP,no
-203.23.103.198,80, , ,HTTP,no
-185.171.230.135,80, , ,HTTP,no
-91.243.35.241,80, , ,HTTP,no
-203.24.108.185,80, , ,HTTP,no
-45.12.31.92,80, , ,HTTP,no
-203.24.102.3,80, , ,HTTP,no
-203.23.106.5,80, , ,HTTP,no
-172.67.160.226,80, , ,HTTP,no
-172.67.171.204,80, , ,HTTP,no
-172.67.181.20,80, , ,HTTP,no
-203.30.188.231,80, , ,HTTP,no
-172.67.177.201,80, , ,HTTP,no
-203.30.191.119,80, , ,HTTP,no
-45.8.104.183,80, , ,HTTP,no
-185.162.229.181,80, , ,HTTP,no
-203.32.120.162,80, , ,HTTP,no
-45.8.104.232,80, , ,HTTP,no
-185.162.231.240,80, , ,HTTP,no
-31.43.179.153,80, , ,HTTP,no
-141.193.213.44,80, , ,HTTP,no
-172.67.181.30,80, , ,HTTP,no
-172.67.181.34,80, , ,HTTP,no
-172.67.187.199,80, , ,HTTP,no
-172.67.181.215,80, , ,HTTP,no
-172.64.142.76,80, , ,HTTP,no
-172.67.97.169,80, , ,HTTP,no
-172.67.3.92,80, , ,HTTP,no
-172.67.3.73,80, , ,HTTP,no
-91.243.35.42,80, , ,HTTP,no
-172.67.176.151,80, , ,HTTP,no
-45.12.31.154,80, , ,HTTP,no
-45.14.174.219,80, , ,HTTP,no
-203.22.223.94,80, , ,HTTP,no
-45.8.104.86,80, , ,HTTP,no
-45.8.105.51,80, , ,HTTP,no
-45.8.105.213,80, , ,HTTP,no
-185.162.231.153,80, , ,HTTP,no
-185.162.230.162,80, , ,HTTP,no
-203.23.103.224,80, , ,HTTP,no
+195.2.71.201,16072,Russian Federation,2440 ms,SOCKS5,High
+203.24.103.18,80,"Virgin Islands, British",160 ms,HTTP,no
+203.24.103.200,80,"Virgin Islands, British",160 ms,HTTP,no
+45.8.105.98,80,Curacao,20 ms,HTTP,no
+45.14.174.19,80,Germany,160 ms,HTTP,no
+203.22.223.28,80,Cyprus,160 ms,HTTP,no
+45.14.174.7,80,Germany,20 ms,HTTP,no
+45.8.104.4,80,Curacao,20 ms,HTTP,no
+45.14.174.194,80,Germany,20 ms,HTTP,no
+45.14.174.30,80,Germany,360 ms,HTTP,no
+203.22.223.118,80,Cyprus,20 ms,HTTP,no
+190.93.247.5,80,,20 ms,HTTP,no
+45.8.105.124,80,Curacao,340 ms,HTTP,no
+45.8.107.231,80,Curacao,740 ms,HTTP,no
+185.162.229.63,80,Armenia,160 ms,HTTP,no
+45.12.31.125,80,Romania,340 ms,HTTP,no
+203.24.109.174,80,Belize,140 ms,HTTP,no
+203.30.191.168,80,Belize,20 ms,HTTP,no
+203.32.121.39,80,"Virgin Islands, British",20 ms,HTTP,no
+91.226.97.239,80,Belize,160 ms,HTTP,no
+91.243.35.213,80,United Kingdom,360 ms,HTTP,no
+45.14.174.236,80,Germany,540 ms,HTTP,no
+23.227.38.205,80,Canada,260 ms,HTTP,no
+203.24.108.18,80,Cyprus,160 ms,HTTP,no
+203.28.8.96,80,Cyprus,560 ms,HTTP,no
+91.226.97.243,80,Belize,700 ms,HTTP,no
+45.14.174.238,80,Germany,600 ms,HTTP,no
+203.22.223.199,80,Cyprus,740 ms,HTTP,no
+203.22.223.5,80,Cyprus,340 ms,HTTP,no
+45.12.31.168,80,Romania,20 ms,HTTP,no
+185.171.230.240,80,United Kingdom,140 ms,HTTP,no
+203.23.103.158,80,Belize,560 ms,HTTP,no
+23.227.38.63,80,Canada,340 ms,HTTP,no
+185.162.228.194,80,Armenia,740 ms,HTTP,no
+45.14.174.17,80,Germany,140 ms,HTTP,no
+203.23.103.217,80,Belize,20 ms,HTTP,no
+203.30.188.251,80,Belize,20 ms,HTTP,no
+203.28.9.197,80,Cyprus,560 ms,HTTP,no
+45.14.174.63,80,Germany,820 ms,HTTP,no
+203.34.28.88,80,"Virgin Islands, British",160 ms,HTTP,no
+45.14.174.206,80,Germany,160 ms,HTTP,no
+203.34.28.199,80,"Virgin Islands, British",540 ms,HTTP,no
+185.171.231.31,80,United Kingdom,340 ms,HTTP,no
+203.32.120.198,80,"Virgin Islands, British",160 ms,HTTP,no
+45.14.174.215,80,Germany,600 ms,HTTP,no
+45.14.174.224,80,Germany,400 ms,HTTP,no
+203.23.106.176,80,Cyprus,220 ms,HTTP,no
+203.32.121.50,80,"Virgin Islands, British",400 ms,HTTP,no
+203.23.103.22,80,Belize,20 ms,HTTP,no
+203.24.102.106,80,"Virgin Islands, British",520 ms,HTTP,no
+45.14.174.57,80,Germany,600 ms,HTTP,no
+45.14.174.48,80,Germany,20 ms,HTTP,no
+45.8.104.148,80,Curacao,520 ms,HTTP,no
+45.12.31.180,80,Romania,400 ms,HTTP,no
+45.12.31.171,80,Romania,520 ms,HTTP,no
+185.171.231.168,80,United Kingdom,200 ms,HTTP,no
+203.23.104.228,80,Cyprus,720 ms,HTTP,no
+45.14.174.55,80,Germany,400 ms,HTTP,no
+203.30.188.10,80,Belize,420 ms,HTTP,no
+194.87.58.245,80,Czech Republic,400 ms,HTTP,no
+203.28.8.170,80,Cyprus,940 ms,HTTP,no
+45.14.174.2,80,Germany,520 ms,HTTP,no
+91.243.35.126,80,United Kingdom,20 ms,HTTP,no
+23.227.38.213,80,Canada,220 ms,HTTP,no
